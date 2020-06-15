@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Roboto';
+  //src: url('Fonts/Roboto/Roboto-Thin.ttf') format('ttf');
+  //src: require('Fonts/Roboto/Roboto-Thin.ttf') format('ttf');
+  //src: require('../../fonts/Roboto/Roboto-Thin.ttf') format('ttf');
+  src: require('fonts/roboto-v20-latin-regular.woff2') format('woff2'),
+  require('fonts/roboto-v20-latin-regular.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.font-thin{
+  font-family: 'Roboto';
+  color: blue;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "rena1234.github.io",
+  "version": "1.0.0",
+  "description": "personal webpage",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "env $(cat .env | grep -v \"#\" | xargs) webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rena1234/rena1234.github.io.git"
+  },
+  "author": "Renato Melo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rena1234/rena1234.github.io/issues"
+  },
+  "homepage": "https://github.com/rena1234/rena1234.github.io#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^6.0.2",
+    "css-loader": "^3.5.3",
+    "file-loader": "^6.0.0",
+    "html-webpack-inline-svg-plugin": "^2.1.1",
+    "html-webpack-plugin": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "raw-loader": "^4.0.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {}
+}
