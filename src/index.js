@@ -1,3 +1,15 @@
 import Intro from 'Components/intro/Intro';
 import Link from 'Components/links-dev/Links';
-import './index.css';
+import Experience from 'Components/experience/Experience';
+import Stack from 'Components/stack/Stack';
+import Menu from 'Components/menu/Menu';
+import Footer from 'Components/footer/Footer';
+import Github from 'Components/github/Github';
+import Responsive from 'Components/responsive/Responsive';
+window.customElements.define('dev-intro', Intro);
+window.customElements.define('stack-section', Stack);
+window.customElements.define('experience-section', Experience);
+window.customElements.define('top-menu', Menu);
+window.customElements.define('footer-section', Footer);
+window.customElements.define('github-section', Github);
+window.customElements.define('responsive-section', Responsive);

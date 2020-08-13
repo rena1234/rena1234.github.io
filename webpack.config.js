@@ -18,7 +18,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: 'src/icons/*', to: 'icons', flatten: true },
-        { from: 'src/fonts/roboto-v20-latin/*', to: 'fonts', flatten: true },
+        //{ from: 'src/fonts/roboto-v20-latin/*', to: 'fonts', flatten: true },
       ]
     }),
     new webpack.DefinePlugin({

@@ -1,0 +1,118 @@
+@import '../../main';
+
+.menu__top{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 10px 10px;
+  font-family: Roboto;
+  font-weight: bold;
+  background: #45A1FF;
+  color: white;
+  @include tablet{
+    padding: 10px 10px 3px 10px;
+  }
+  .menu__left{
+    display: flex;
+    align-items: center;
+    width: 20%;
+    @include desktop{
+      height: 40px;
+    }
+  }
+  
+  .menu__left__find{
+    display: none;
+    @include desktop{
+      display: flex;
+      align-items: center;
+      border: 1px solid;
+    }
+    @include tablet{
+      display: flex;
+      align-items: center;
+      border: 1px solid;
+      padding: 5px 10px;
+      border-radius: 20px;
+    }
+  }
+
+  .menu__left__bars{
+    @include tablet{
+      display: none;
+      
+    }
+    @include desktop{
+      display: none;
+    }
+  }
+
+  .menu__right {
+    display: flex;
+    width: 20%;
+    @include desktop{
+      height: 40px;
+    }
+    justify-content: space-around;
+    align-items: center;
+    
+    .menu__right__desktop-icon{
+      display: none;
+      @include desktop{
+        display: block;
+      }
+    } 
+    .search-container{
+      @include desktop{
+        padding: 0 10% 0 10%;
+      }
+
+      .search-container__search{
+        @include desktop{
+          padding: 1vh;
+          background: #F2F2F2;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  
+  .bar__name--left {
+    font-size: 1.25em;
+    @include tablet{
+      display: none;
+    }
+    @include desktop{
+      display: none;
+    }
+  }
+  .bar__name--center {
+    display: none;
+    font-size: 5vh;
+    @include desktop{
+      display: block;
+      padding-top: 40px;
+    }
+    @include tablet{
+      display: block;
+    }
+  }
+
+}
+
+.menu-links{
+  font-size: 0.8em;
+  display: none;
+  justify-content: space-around;
+  padding: 0%  10% 1% 10%;
+  border-bottom: 1px solid lighten(black, 50%);
+  @include desktop{
+    display: flex;
+  }
+  @include tablet{
+    display: flex;
+  }
+}
+
+.hover-text{
+  cursor: pointer;
+}

@@ -1,0 +1,28 @@
+@import '../../main';
+
+.container {
+  background: #333333;
+  //padding: 10vw;
+  text-align: center;
+  @include tablet{
+    display: flex;
+  }
+  width: 100%;
+}
+
+.first-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include tablet{
+    width: 40%;
+  }
+}
+
+.second-box {
+  @include tablet{
+    width: 60%;
+  }
+  text-align: left;
+}
+

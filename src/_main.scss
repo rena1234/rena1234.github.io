@@ -1,0 +1,88 @@
+$primary-color: #DBB07D;
+$desktop: 1024px;
+$tablet: 768px;
+$light-color: #F2F2F2;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+   @content;     
+  }
+}
+
+@mixin tablet{
+  @media (min-width: #{$tablet}) {
+   @content;     
+  }
+}
+
+@mixin primary-color {
+  color: $primary-color;
+}
+
+@mixin description-text{
+  font-size: 5vw;
+  @include tablet{
+    font-size: 2vw;
+  }
+  @include desktop{
+    font-size: 1.3vw;
+  }
+}
+$light-text-color: darken($light-color, 40%);
+@mixin light-text {
+  color: $light-text-color;
+}
+
+@mixin separator {
+  height: 1px;
+  background: $light-color;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+
+.light-text {
+  color: darken($light-color, 40%);
+}
+
+.title{
+  font-size: 10vw;
+  @include tablet{
+    font-size: 5vw;
+  }
+  @include desktop{
+    font-size: 4.5vw;
+  }
+  font-family: Serif;
+  font-weight: bold;
+}
+
+.description-text{
+  font-size: 5vw;
+  @include tablet{
+    font-size: 2vw;
+  }
+  @include desktop{
+    font-size: 1.3vw;
+  }
+
+}
+
+.subtitle {
+  font-size: 7vw;
+  @include tablet{
+    font-size: 2.5vw;
+  }
+  @include desktop{
+    font-size: 1.5vw;
+  }
+  font-family: Roboto;
+  font-weight: bold;
+}
+
+.separator {
+  height: 1px;
+  background: $light-color;
+  //background: red;
+}

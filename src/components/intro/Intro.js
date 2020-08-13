@@ -1,55 +1,103 @@
+import style from 'Components/intro/Intro.scss'
+
 const template = document.createElement('template');
-import style from 'Components/intro/Intro.scss';
 
 const styleElement = document.createElement('style');
 styleElement.type = "text/css";
 styleElement.appendChild(document.createTextNode(style));
 
-template.innerHTML = `
-  <div class="intro-container">
-    <div> 
-      <h2 class="font-thin">HELLO</h2>
-    </div>
-    <div style="display: flex;">
-      <slot name="dev-name"/>
-    </div>
-    <div><slot name="title"></div>
-  </div>
-  `;
+const expanderClick = () => console.log('it works');
+const teste = () => expanderClick();
+
+const getHtml = (primaryColor) => {
+    return `
+      <div class="discover">
+        <div class="left-bar">
+          <div 
+            class="number first hover-text"
+            style="border-color: ${primaryColor}">
+            1
+          </div>
+          <div class="number hover-text">
+            2
+          </div>
+          <div class="number hover-text">
+            3
+          </div>
+          <div 
+            class="left-bar__line"
+            style="background: ${primaryColor}">
+          </div>  
+          <div class="left-bar__text">
+            DISCOVER MORE
+          </div>
+          <div class="left-bar__bottom">
+          </div>
+        </div>
+        <div class="image-container">
+          <div class="image-container__text">This page is under construction</div>
+          <div class="image-container__expander">
+            <expander-element>
+              <div slot="text">
+                EXPLORE
+              </div>
+            </expander-element>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <div class="bottom-bar__numbers">
+          <div 
+            class="number first hover-text"
+            style="border-color: ${primaryColor}">
+            1
+          </div>
+          <div class="number hover-text">
+            2
+          </div>
+          <div class="number hover-text">
+            3
+          </div>
+        </div>
+      </div>
+    `;
+}
+
 export default class Intro extends HTMLElement {
   constructor() {
     super();
-    const fontsStyle = `
-      .font-thin{
-        font-family: 'Roboto';
-        color: green;
-      }
-      .intro-container{
-        background:${this.getAttribute('background')}
-      }
-    `;
-    console.log(this.getAttribute('background'));
-    const styleJsElement = document.createElement('style');
-    styleJsElement.type = "text/css";
-    styleJsElement.appendChild(document.createTextNode(fontsStyle));
+    this._styleHoverElement = document.createElement('style');
+    this._primaryColor = 'black';
+    template.innerHTML = getHtml(this._primaryColor);
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowRoot.appendChild(styleElement);
+    this.initExpander();
+  } 
+  
+  set primaryColor(color){
+    this._primaryColor = color;
+    this.updateTemplate();
+    this.initExpander();
+  }
 
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot
-      .appendChild(template.content.cloneNode(true));
-    //this.shadowRoot.appendChild(styleElement);
-    this.shadowRoot.appendChild(styleJsElement);
+  set styleHoverElementFactory(styleElementFactory){
+    this._styleHoverElement = styleElementFactory();
+    this.updateTemplate();
+  }
+
+  initExpander() {
+    const expander = this.shadowRoot.querySelector('expander-element');
+    expander.onClick = teste;
+    expander.borderColor = this._primaryColor;  
+    expander.color = 'white';  
+  }
+
+  updateTemplate(){
+    template.innerHTML = getHtml(this._primaryColor);
+    this.shadowRoot.innerHTML = template.innerHTML;
+    this.shadowRoot.appendChild(styleElement);
+    this.shadowRoot.appendChild(this._styleHoverElement);
+    this.initExpander();
   }
 }
-
-window.customElements.define('dev-intro', Intro)
-
-const url = 'https://api.github.com/users/rena1234';
-fetch(url)
-  .then(data=>{return data.json()})
-  .then(res=>{console.log(res)});
-
-const sourl = `https://api.stackexchange.com/2.2/users/${process.env.SO_ID}?&site=stackoverflow`
-fetch(sourl)
-  .then(data=>{return data.json()})
-  .then(res=>{console.log({soreq: res})});
-

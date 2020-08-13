@@ -1,0 +1,48 @@
+@import '../../main';
+
+.events {
+  width: 100%;
+  @include tablet{
+    display: flex;
+  }
+  
+  .events__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6% 5% 0% 5%;
+
+    @include tablet{
+      width: 50%;
+      align-items: flex-start;
+    }
+  }
+   
+    
+}
+.events__list {
+  @include tablet{
+    width: 50%;
+  }
+
+  padding: 6% 6% 15% 6%;
+  .events__list__month {
+    padding-top: 5%;
+    text-transform: uppercase;
+  }
+  .events__list__month, .title, .subtitle, .description-text {
+    padding-bottom: 4%;
+    padding-right: 25%;
+  }
+
+}
+
+
+
+.separator {
+  //width: 90vw;
+  width: 100%;
+  margin: auto;
+}
+
+
