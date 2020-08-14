@@ -42,15 +42,6 @@ const getHtml= (primaryColor, lightColor) => {
         </div>
       </div>
     </div>
-    <div 
-      class="menu-links"
-      style="border-color: ${lightColor}">
-      <span class="hover-text">COLLECTIONS</span>
-      <span class="hover-text">CATEGORIES</span>
-      <span class="hover-text">STORES</span>
-      <span class="hover-text">OUR STORY</span>
-      <span class="hover-text">CONTACT</span>
-    </div>
   `;
 }
 

@@ -12,16 +12,21 @@ const teste = () => expanderClick();
 const getHtml = (primaryColor) => {
     return `
       <div class="discover">
-        <div class="left-bar">
+        <div class="left-bar light-text">
           <div 
+            data-index="0"
             class="number first hover-text"
-            style="border-color: ${primaryColor}">
+            >
             1
           </div>
-          <div class="number hover-text">
+          <div 
+            data-index="1"
+            class="number hover-text">
             2
           </div>
-          <div class="number hover-text">
+          <div 
+            data-index="2"
+            class="number hover-text">
             3
           </div>
           <div 
@@ -35,7 +40,7 @@ const getHtml = (primaryColor) => {
           </div>
         </div>
         <div class="image-container">
-          <div class="image-container__text">This page is under construction</div>
+          <div class="image-container__text">I'm a Web Developer</div>
           <div class="image-container__expander">
             <expander-element>
               <div slot="text">
@@ -48,14 +53,19 @@ const getHtml = (primaryColor) => {
       <div class="bottom-bar">
         <div class="bottom-bar__numbers">
           <div 
+            data-index="0"
             class="number first hover-text"
             style="border-color: ${primaryColor}">
             1
           </div>
-          <div class="number hover-text">
+          <div 
+            data-index="1"
+            class="number hover-text">
             2
           </div>
-          <div class="number hover-text">
+          <div 
+            data-index="2"
+            class="number hover-text">
             3
           </div>
         </div>
@@ -73,7 +83,22 @@ export default class Intro extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.shadowRoot.appendChild(styleElement);
     this.initExpander();
+    this.initNumberButtons();
   } 
+
+  initNumberButtons() {
+    const scrollElements = [
+      document.querySelector('stack-section'),
+      document.querySelector('experience-section'),
+      document.querySelector('github-section'),
+    ];
+    const numberButtons = this.shadowRoot.querySelectorAll('.number');
+    numberButtons.forEach( btn => {
+      btn.addEventListener('click', () => {
+        scrollElements[btn.dataset.index].scrollIntoView({behavior: 'smooth'});
+      });
+    });
+  }
   
   set primaryColor(color){
     this._primaryColor = color;

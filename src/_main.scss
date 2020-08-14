@@ -84,5 +84,10 @@ $light-text-color: darken($light-color, 40%);
 .separator {
   height: 1px;
   background: $light-color;
-  //background: red;
+}
+
+.hover-text:hover {
+  color: $primary-color; 
+  border-color: $primary-color;
+  transition: 0.3s;
 }

@@ -2,6 +2,8 @@
 
 .events {
   width: 100%;
+  background: #F9EFE4;
+
   @include tablet{
     display: flex;
   }

@@ -80,9 +80,10 @@
         border: 1px solid $light-text-color;
         color: white;
       }
+
     }
     .footer__sign-up-text {
-      padding: 7% 0%;
+      padding: 3% 0%;
       font-size: 6vw;
       font-weight: bold;
       font-family: Serif; 
@@ -92,6 +93,15 @@
         text-align: center;
       }
     }
+
+    .footer__top__contact-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $light-text-color;
+      padding-bottom: 3%;
+    }
+
     .footer__top__form {
       @include tablet {
         display: flex;
