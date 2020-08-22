@@ -14,19 +14,19 @@ const images = [
     url: 'assets/photo5023836475086710854.jpg' 
   },
   {
-    url: 'assets/photo5023836475086710854.jpg' 
+    url: 'assets/2020-08-22-174057_1366x768_scrot.png' 
   },
   {
     url: 'assets/photo5023836475086710854.jpg' 
   },
   {
-    url: 'assets/photo5023836475086710854.jpg' 
+    url: 'assets/2020-08-22-174057_1366x768_scrot.png' 
   },
   {
     url: 'assets/photo5023836475086710854.jpg' 
   },
   {
-    url: 'assets/photo5023836475086710854.jpg' 
+    url: 'assets/2020-08-22-174057_1366x768_scrot.png' 
   },
   {
     url: 'assets/photo5023836475086710854.jpg' 
