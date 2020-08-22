@@ -14,6 +14,7 @@ template.innerHTML = `
   </div>
 `;
 
+/*
 const url = 'https://api.github.com/users/rena1234';
 fetch(url)
   .then(data=>{return data.json()})
@@ -28,6 +29,7 @@ const mediumUrl = 'https://api.medium.com/v1/users/renatoferreira249/publication
 fetch(mediumUrl)
   .then(data=>{return data.json()})
   .then(res=>{console.log(res)});
+  */
 
 const styleElement = document.createElement('style');
 styleElement.type = "text/css";

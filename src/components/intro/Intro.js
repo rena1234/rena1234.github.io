@@ -40,7 +40,7 @@ const getHtml = (primaryColor) => {
           </div>
         </div>
         <div class="image-container">
-          <div class="image-container__text">I'm a Web Developer</div>
+          <div class="image-container__text">This Page is under construction</div>
           <div class="image-container__expander">
             <expander-element>
               <div slot="text">
@@ -71,6 +71,37 @@ const getHtml = (primaryColor) => {
         </div>
       </div>
     `;
+}
+
+const moveNext = (items) => {
+  const itemsSize = items.length;
+  const findNextIndex = (base, offset) => {
+    if(base + offset >= itemsSize){
+      return (base + offset) % itemsSize;
+    } else {
+      return base + offset;
+    }
+  }
+  const findPrevIndex= (base, offset) => {
+    if(base - offset < 0){
+      return itemsSize - Math.abs(base - offset);
+    } else {
+      return base - offset;
+    }
+
+  }
+  for(const [index, item] of items.entries()){
+    if(item.classList.contains('first')){
+      item.classList.remove('first');
+      item.classList.add('hidden-left');
+      items[findNextIndex(index,1)].classList.remove('second');
+      items[findNextIndex(index,1)].classList.add('first');
+      items[findNextIndex(index, 2)].classList.remove('hidden-right');
+      items[findNextIndex(index, 2)].classList.remove('hidden-left');
+      items[findNextIndex(index, 2)].classList.add('second');
+      return true;
+    }
+  }
 }
 
 export default class Intro extends HTMLElement {

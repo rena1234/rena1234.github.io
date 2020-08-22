@@ -18,7 +18,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: 'src/icons/*', to: 'icons', flatten: true },
-        { from: 'assets/*', to: 'assets', flatten: true },
+        //{ from: 'assets/*', to: 'assets', flatten: true },
         //{ from: 'src/fonts/roboto-v20-latin/*', to: 'fonts', flatten: true },
       ]
     }),
@@ -47,7 +47,8 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        //test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(png|svg|jpg|gif)$/,
         use: [
           'file-loader',
         ],
