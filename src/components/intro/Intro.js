@@ -11,28 +11,28 @@ const teste = () => expanderClick();
 
 const images = [
   {
-    url: 'https://picsum.photos/id/495/720' 
+    url: 'assets/photo5023836475086710854.jpg' 
   },
   {
-    url: 'https://picsum.photos/id/497/720' 
+    url: 'assets/photo5023836475086710854.jpg' 
   },
   {
-    url: 'https://picsum.photos/id/496/720' 
+    url: 'assets/photo5023836475086710854.jpg' 
   },
   {
-    url: 'https://picsum.photos/id/498/720' 
+    url: 'assets/photo5023836475086710854.jpg' 
   },
   {
-    url: 'https://picsum.photos/id/499/720' 
+    url: 'assets/photo5023836475086710854.jpg' 
   },
   {
-    url: 'https://picsum.photos/id/502/720' 
+    url: 'assets/photo5023836475086710854.jpg' 
   },
   {
-    url: 'https://picsum.photos/id/503/720' 
+    url: 'assets/photo5023836475086710854.jpg' 
   },
   {
-    url: 'https://picsum.photos/id/501/720' 
+    url: 'assets/photo5023836475086710854.jpg' 
   }
 ]
 
