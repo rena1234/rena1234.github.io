@@ -56,6 +56,7 @@
     width: 100%;
     height: 45vh;
     overflow: hidden;
+    position: relative;
     @include tablet{
       width: 94%;
       height: auto;
@@ -64,9 +65,17 @@
       width: 97%;
       height: auto;
     }
-    //background-image: url('https://picsum.photos/800') ;
+    /*
     background-image: url('assets/photo5023836475086710854.jpg') ;
     background-size: cover; 
+    */
+    .image {
+      width: 100vw;
+      height: 100%;
+      transition: all 1s;
+      position: absolute;
+    }
+
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -75,6 +84,8 @@
       font-family: 'serif';
       font-weight: bold;
       font-size: 10vw;
+      position: absolute;
+      z-index: 1;
       @include tablet{
         font-size: 4.5vw;
       }
