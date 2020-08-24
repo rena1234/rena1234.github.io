@@ -52,62 +52,60 @@ const getimagesHtml = (images) => {
   return html;
 }
 
-const getHtml = () => {
-    return `
-      <div class="discover">
-        <div class="left-bar">
-          <div 
-            data-index="0"
-            class="number first hover-text"
-            >
-            1
-          </div>
-          <div 
-            data-index="1"
-            class="number hover-text">
-            2
-          </div>
-          <div 
-            data-index="2"
-            class="number hover-text">
-            3
-          </div>
-          <div 
-            class="left-bar__line">
-          </div>  
-          <div class="left-bar__text">
-            DISCOVER MORE
-          </div>
-          <div class="left-bar__bottom">
-          </div>
-        </div>
-        <div class="image-container">
-          ${getimagesHtml(images)}
-          <div class="image-container__text">This Page is under construction</div>
-        </div>
-      </div>
-      <div class="bottom-bar">
-        <div class="bottom-bar__numbers">
-          <div 
-            data-index="0"
-            class="number first hover-text">
-            1
-          </div>
-          <div 
-            data-index="1"
-            class="number hover-text">
-            2
-          </div>
-          <div 
-            data-index="2"
-            class="number hover-text">
-            3
-          </div>
-        </div>
-      </div>
-    `;
-}
 
+template.innerHTML = `
+  <div class="discover">
+    <div class="left-bar">
+      <div 
+        data-index="0"
+        class="number first hover-text"
+        >
+        1
+      </div>
+      <div 
+        data-index="1"
+        class="number hover-text">
+        2
+      </div>
+      <div 
+        data-index="2"
+        class="number hover-text">
+        3
+      </div>
+      <div 
+        class="left-bar__line">
+      </div>  
+      <div class="left-bar__text">
+        DISCOVER MORE
+      </div>
+      <div class="left-bar__bottom">
+      </div>
+    </div>
+    <div class="image-container">
+      ${getimagesHtml(images)}
+      <div class="image-container__text">This Page is under construction</div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="bottom-bar__numbers">
+      <div 
+        data-index="0"
+        class="number first hover-text">
+        1
+      </div>
+      <div 
+        data-index="1"
+        class="number hover-text">
+        2
+      </div>
+      <div 
+        data-index="2"
+        class="number hover-text">
+        3
+      </div>
+    </div>
+  </div>
+`;
 
 const moveNext = (items, wrapper) => {
   const firstItem = wrapper.querySelector('.image');
@@ -140,7 +138,6 @@ const moveNext = (items, wrapper) => {
 export default class Intro extends HTMLElement {
   constructor() {
     super();
-    template.innerHTML = getHtml();
     this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.shadowRoot.appendChild(styleElement);
@@ -162,12 +159,5 @@ export default class Intro extends HTMLElement {
         scrollElements[btn.dataset.index].scrollIntoView({behavior: 'smooth'});
       });
     });
-  }
-
-  updateTemplate(){
-    template.innerHTML = getHtml(this._primaryColor);
-    this.shadowRoot.innerHTML = template.innerHTML;
-    this.shadowRoot.appendChild(styleElement);
-    this.shadowRoot.appendChild(this._styleHoverElement);
   }
 }

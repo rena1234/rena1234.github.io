@@ -82,12 +82,5 @@ export default class Menu extends HTMLElement {
     this.shadowRoot.innerHTML = template.innerHTML;
     this.shadowRoot.appendChild(styleElement);
     this.shadowRoot.appendChild(this._styleHoverElement);
-
-    /*
-    const shopp = this.shadowRoot.getElementById('testeid');
-    shopp.addEventListener('click', () => {
-        document.getElementById('section2').scrollIntoView({behavior: "smooth"});
-        });
-    */
   }
 }
