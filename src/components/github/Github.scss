@@ -1,6 +1,6 @@
 @import '../../main';
 
-.container {
+.github{
   background: #333333;
   padding: 3vh 0;
   text-align: center;
@@ -8,24 +8,24 @@
     display: flex;
   }
   width: 100%;
+
+  .github__first-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    a {
+      color: white;
+    }
+    @include tablet{
+      width: 40%;
+    }
+  }
+
+  .github__second-box {
+    @include tablet{
+      width: 60%;
+    }
+  }
 }
 
-.first-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  a {
-    color: white;
-  }
-  @include tablet{
-    width: 40%;
-  }
-}
-
-.second-box {
-  @include tablet{
-    width: 60%;
-  }
-  text-align: left;
-}
 

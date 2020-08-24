@@ -5,7 +5,7 @@ template.innerHTML = `
   <div class="footer">
     <div class="footer__top">
       <div class="separator__tablet"></div>
-      <div class="footer__sign-up-text">
+      <div class="footer__title">
         Have any questions ?
       </div>  
       <div class="footer__top__contact-options">
@@ -13,7 +13,7 @@ template.innerHTML = `
           Email me at: renatoferreira249@gmail.com
         </div>
         <div>
-          Connect to my Linkedin: renatoferreira249@gmail.com
+          Linkedin: renatoferreira249@gmail.com
         </div>
       </div>
     </div>

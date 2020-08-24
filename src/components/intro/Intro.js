@@ -6,9 +6,6 @@ const styleElement = document.createElement('style');
 styleElement.type = "text/css";
 styleElement.appendChild(document.createTextNode(style));
 
-const expanderClick = () => console.log('it works');
-const teste = () => expanderClick();
-
 const images = [
   {
     url: 'assets/photo5023836475086710854.jpg' 
@@ -19,21 +16,6 @@ const images = [
   {
     url: 'assets/photo5023836475086710854.jpg' 
   },
-  {
-    url: 'assets/2020-08-22-174057_1366x768_scrot.png' 
-  },
-  {
-    url: 'assets/photo5023836475086710854.jpg' 
-  },
-  {
-    url: 'assets/2020-08-22-174057_1366x768_scrot.png' 
-  },
-  {
-    url: 'assets/photo5023836475086710854.jpg' 
-  },
-  {
-    url: 'assets/photo5023836475086710854.jpg' 
-  }
 ]
 
 const getimagesHtml = (images) => {
@@ -70,10 +52,10 @@ const getimagesHtml = (images) => {
   return html;
 }
 
-const getHtml = (primaryColor) => {
+const getHtml = () => {
     return `
       <div class="discover">
-        <div class="left-bar light-text">
+        <div class="left-bar">
           <div 
             data-index="0"
             class="number first hover-text"
@@ -91,8 +73,7 @@ const getHtml = (primaryColor) => {
             3
           </div>
           <div 
-            class="left-bar__line"
-            style="background: ${primaryColor}">
+            class="left-bar__line">
           </div>  
           <div class="left-bar__text">
             DISCOVER MORE
@@ -103,21 +84,13 @@ const getHtml = (primaryColor) => {
         <div class="image-container">
           ${getimagesHtml(images)}
           <div class="image-container__text">This Page is under construction</div>
-          <div class="image-container__expander">
-            <expander-element>
-              <div slot="text">
-                EXPLORE
-              </div>
-            </expander-element>
-          </div>
         </div>
       </div>
       <div class="bottom-bar">
         <div class="bottom-bar__numbers">
           <div 
             data-index="0"
-            class="number first hover-text"
-            style="border-color: ${primaryColor}">
+            class="number first hover-text">
             1
           </div>
           <div 
@@ -167,13 +140,10 @@ const moveNext = (items, wrapper) => {
 export default class Intro extends HTMLElement {
   constructor() {
     super();
-    this._styleHoverElement = document.createElement('style');
-    this._primaryColor = 'black';
-    template.innerHTML = getHtml(this._primaryColor);
+    template.innerHTML = getHtml();
     this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.shadowRoot.appendChild(styleElement);
-    this.initExpander();
     this.initNumberButtons();
     const wrapper = this.shadowRoot.querySelector('.image-container');
     const images = this.shadowRoot.querySelectorAll('.image');
@@ -193,30 +163,11 @@ export default class Intro extends HTMLElement {
       });
     });
   }
-  
-  set primaryColor(color){
-    this._primaryColor = color;
-    this.updateTemplate();
-    this.initExpander();
-  }
-
-  set styleHoverElementFactory(styleElementFactory){
-    this._styleHoverElement = styleElementFactory();
-    this.updateTemplate();
-  }
-
-  initExpander() {
-    const expander = this.shadowRoot.querySelector('expander-element');
-    expander.onClick = teste;
-    expander.borderColor = this._primaryColor;  
-    expander.color = 'white';  
-  }
 
   updateTemplate(){
     template.innerHTML = getHtml(this._primaryColor);
     this.shadowRoot.innerHTML = template.innerHTML;
     this.shadowRoot.appendChild(styleElement);
     this.shadowRoot.appendChild(this._styleHoverElement);
-    this.initExpander();
   }
 }

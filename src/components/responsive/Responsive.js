@@ -2,14 +2,14 @@ import style from 'Components/responsive/Responsive.scss'
 const template = document.createElement('template');
 
 template.innerHTML = `
-  <div class="container">
-    <div class="first-box">
+  <div class="responsive">
+    <div class="responsive__first-box">
       <span class="title">
         Check this page responsivity
       </span>
     </div>
-    <div class="second-box">
-      <div class="second-box__text-container">
+    <div class="responsive__second-box">
+      <div class="responsive__second-box__text-container">
         <span class="subtitle">
           This page has Desktop, Tablet and Phone designs. Change your resolution to see
         </span>

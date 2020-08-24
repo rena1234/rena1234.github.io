@@ -6,7 +6,7 @@ const getHtml = (events) => {
   const eventsHtml = events.reduce( (html, e) => {
       return `
         ${html}
-        <div class="events__list__month description-text">
+        <div class="experience__list__date description-text">
           ${e.startYear}-${e.endYear}
         </div>
         <div class="title primary-color">
@@ -23,16 +23,16 @@ const getHtml = (events) => {
     }
   ,''); 
   return `
-    <div class="events">
-      <div class="events__top">
-        <div class="events__event-text subtitle light-text">
+    <div class="experience">
+      <div class="experience__top">
+        <div class="subtitle light-text">
          EXPERIENCE
         </div>
         <div class="title primary-color">
           I've worked at: 
         </div>
       </div>
-      <div class="events__list">
+      <div class="experience__list">
         <div class="separator"></div>
         ${eventsHtml}
       </div>

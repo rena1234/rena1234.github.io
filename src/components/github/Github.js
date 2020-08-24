@@ -2,13 +2,13 @@ import style from 'Components/github/Github.scss'
 const template = document.createElement('template');
 
 template.innerHTML = `
-  <div class="container">
-    <div class="first-box">
+  <div class="github">
+    <div class="github__first-box">
       <div class="subtitle light-text">
         <a href="https://github.com/rena1234/rena1234.github.io">Click to check this page code</a>
       </div>
     </div>
-    <div class="second-box">
+    <div class="github__second-box">
       <span class="title primary-color">Take a look at my github</span>
     </div>
   </div>

@@ -13,15 +13,15 @@ const stack = [
   'Git',
 ]
 template.innerHTML = `
-  <div class="events">
-    <div class="events__top">
+  <div class="stack">
+    <div class="stack__top">
       <div class="title primary-color">
        My Stack
       </div>
     </div>
-    <div class="events__list">
+    <div class="stack__list">
       <div class="separator"></div>
-      <div class="stack-container">
+      <div class="stack__list__container">
         ${stack.reduce((str, t) => `${str}<span class="subtitle">${t}</span>`,'')}
       </div>
     </div>

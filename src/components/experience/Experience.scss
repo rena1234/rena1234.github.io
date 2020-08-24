@@ -1,12 +1,12 @@
 @import '../../main';
 
-.events {
+.experience {
   width: 100%;
   @include tablet{
     display: flex;
   }
   
-  .events__top {
+  .experience__top{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,31 +18,32 @@
     }
   }
    
+  .experience__list {
+    @include tablet{
+      width: 50%;
+    }
+
+    .separator {
+      width: 100%;
+      margin: auto;
+    }
+
+    padding: 6% 6% 15% 6%;
+    .experience__list__date{
+      padding-top: 5%;
+      text-transform: uppercase;
+    }
+    .experience__list__date, .title, .subtitle, .description-text {
+      padding-bottom: 4%;
+      padding-right: 25%;
+    }
+
+  }
     
 }
-.events__list {
-  @include tablet{
-    width: 50%;
-  }
-
-  padding: 6% 6% 15% 6%;
-  .events__list__month {
-    padding-top: 5%;
-    text-transform: uppercase;
-  }
-  .events__list__month, .title, .subtitle, .description-text {
-    padding-bottom: 4%;
-    padding-right: 25%;
-  }
-
-}
 
 
 
-.separator {
-  //width: 90vw;
-  width: 100%;
-  margin: auto;
-}
+
 
 

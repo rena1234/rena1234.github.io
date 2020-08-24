@@ -8,28 +8,10 @@
   margin-bottom: 2%;
 }
 
-%full-width-fat {
-  @extend %full-width-item;
-  padding: 4vw 0vw;
-  @include tablet{
-    width: 40%;
-    padding: 2vw 0vw;
-  }
-}
-
-.flex-on-tablet {
-  @include tablet{
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
 .footer {
   color: white;
   background: #333333;
-  //width: 92vw;
   width: 100%;
-  //padding: 0% 4vw;
 
   .separator {
     @extend %full-width-item;
@@ -46,47 +28,15 @@
    }   
 
   .footer__top {
-    //width: 92vw;
     width: 92%;
-    //padding: 10% 4vw 0% 4vw;
     padding: 5% 4% 0% 4%;
     
-    .footer__top__social {
-      @include tablet {
-        display: flex;
-        justify-content: space-between;
-      }
-      .footer__top__social__icons{
-        display: flex;
-        justify-content: center;
-        
-        @include tablet{
-          width: 40%;
-        }
-        div {
-          padding: 0vw 6vw 6vw 6vw;
-          @include tablet{
-            width: 40%;
-            padding: 0vw 6vw;
-          }
-        }  
-      }
-      .footer__top__social_button {
-        @extend %full-width-fat;
-        @include tablet{
-          //width: 40%;
-        }
-        background: transparent;
-        border: 1px solid $light-text-color;
-        color: white;
-      }
-
-    }
-    .footer__sign-up-text {
+    .footer__title{
       padding: 3% 0%;
       font-size: 6vw;
       font-weight: bold;
       font-family: Serif; 
+      text-align: center;
       color: $primary-color;
       @include tablet {
         font-size: 3vw;
@@ -100,76 +50,17 @@
       align-items: center;
       color: $light-text-color;
       padding-bottom: 3%;
+      font-family: Roboto;
     }
-
-    .footer__top__form {
-      @include tablet {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-      }
-      input {
-        @extend %full-width-fat;
-        background: transparent;
-        border: 1px solid $primary-color;
-        color: white;
-        padding-left: 4vw;
-        @include tablet {
-          width: 60%;
-        }
-      }
-      .highlight-button {
-        @extend %full-width-fat;
-        background: $primary-color;
-        border: none;
-        @include tablet {
-          width: 30%;
-        }
-      }
-    } 
   }
-  .help {
-    width: 92%;
-    padding: 0% 4% 7% 4%;
-    @include tablet {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .help__text {
-      @extend .description-text;
-      @extend .light-text;
-      padding: 5% 0%;
-    }
-
-  }
-    
-  .footer__contact {
-    padding-top: 5%; 
-    font-weight: bold;
-  }  
   
-  .footer__support {
-    padding-top: 5%; 
-    font-weight: bold;
-    @include tablet {
-      width: 60%;
-    }
-    .footer__top__support__items {
-      display: flex;
-      justify-content: space-between;
-    }
-  } 
-  .footer__payment{
-    padding: 5% 0%;
-    font-weight: bold;
-  } 
   .footer__bottom {
     padding: 2% 0%;
     background: #5A5A5A;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: Roboto;
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
