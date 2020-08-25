@@ -13,7 +13,8 @@ template.innerHTML = `
           Email me at: renatoferreira249@gmail.com
         </div>
         <div>
-          Linkedin: renatoferreira249@gmail.com
+          
+          Linkedin: <a href="https://www.linkedin.com/in/renato-melo-026703191">www.linkedin.com/in/renato-melo-026703191</a>
         </div>
       </div>
     </div>
