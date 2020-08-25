@@ -99,3 +99,22 @@ $light-text-color: darken($light-color, 40%);
 .dark-background {
   background: #333333;
 }
+
+.tooltip-text {
+  visibility: hidden;
+  z-index: 1;
+  position: absolute;
+  top: 50px;
+  padding: 0.5%;
+  background: #333333;
+  transition: 0.2s;
+  border-radius: 5px;
+  color: white !important;
+
+}
+
+.tooltip:hover {
+  .tooltip-text {
+    visibility: visible;
+  }
+}

@@ -88,11 +88,7 @@
   }
   .bar__name--center {
     display: none;
-    font-size: 5vh;
-    @include desktop{
-      display: block;
-      padding-top: 40px;
-    }
+    font-size: 4vh;
     @include tablet{
       display: block;
     }
@@ -112,6 +108,13 @@
   @include tablet{
     display: flex;
   }
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 0;
 }
 
 .hover-text{
