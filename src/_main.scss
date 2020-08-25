@@ -118,3 +118,11 @@ $light-text-color: darken($light-color, 40%);
     visibility: visible;
   }
 }
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+}

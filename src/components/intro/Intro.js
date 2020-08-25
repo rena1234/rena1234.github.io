@@ -68,17 +68,23 @@ template.innerHTML = `
         data-index="0"
         class="number first hover-text"
         >
-        1
+        <button>
+          1
+        </button>
       </div>
       <div 
         data-index="1"
         class="number hover-text">
-        2
+        <button>
+          2
+        </button>
       </div>
       <div 
         data-index="2"
         class="number hover-text">
-        3
+        <button>
+          3
+        </button>
       </div>
       <div 
         class="left-bar__line">
@@ -98,17 +104,23 @@ template.innerHTML = `
       <div 
         data-index="0"
         class="number first hover-text">
-        1
+        <button>
+          1
+        </button>
       </div>
       <div 
         data-index="1"
         class="number hover-text">
-        2
+        <button>
+          2
+        </button>
       </div>
       <div 
         data-index="2"
         class="number hover-text">
-        3
+        <button>
+          3
+        </button>
       </div>
     </div>
   </div>

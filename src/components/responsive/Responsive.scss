@@ -9,14 +9,10 @@
 
   .responsive__first-box{
     color: darken($light-color, 5%);
-    //background: coral;
     background-image: url(assets/responsive-2044921_1280.jpg);
     background-repeat: no-repeat; 
     background-size: contain;
     background-position: center center;
-    @include desktop {
-      //background-size: cover;
-    }
     text-align: center;
     padding: 10vh;
     @include tablet{
@@ -26,11 +22,10 @@
 
   .responsive__second-box{
     color: darken($light-color, 60%);
-    //background: #45A1FF;
     background: #9FCCE3;
     text-align: center;
-    padding: 5vh;
-    height: 40vh;
+    padding: 10vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
