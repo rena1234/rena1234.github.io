@@ -8,13 +8,19 @@ styleElement.appendChild(document.createTextNode(style));
 
 const images = [
   {
-    url: 'assets/photo5023836475086710854.jpg' 
+    url: 'assets/developer-4027337_1280.png',
+    imageClasses: 'image contain-image',
+    innerHtml: '<div class="image-container__text-bottom primary-color light-background">Experience with remote work</div>'
   },
   {
-    url: 'assets/2020-08-22-174057_1366x768_scrot.png' 
+    url: 'assets/photo5023836475086710854.jpg',
+    imageClasses: 'image',
+    innerHtml: '<div class="image-container__text-bottom primary-color dark-background">I\'m a Web Developer</div>'
   },
   {
-    url: 'assets/photo5023836475086710854.jpg' 
+    //url: 'assets/photo5023836475086710854.jpg',
+    imageClasses: 'image light-background center-text',
+    innerHtml: '<span class="title primary-color">2 and a half years experience</span>'
   },
 ]
 
@@ -29,9 +35,10 @@ const getimagesHtml = (images) => {
       `
         <div 
           style="left: ${offset}vw;
-          background: url(${item.url});background-size: cover;
+          background-image: url(${item.url});
           "
-          class="image unselected">
+          class="${item.imageClasses} unselected">
+          ${item.innerHtml}
         </div>
       `
       offset += 100;
@@ -41,9 +48,10 @@ const getimagesHtml = (images) => {
       `
         <div 
           style="left: ${offset}vw;
-          background: url(${item.url});background-size: cover;
+          background-image: url(${item.url});
           "
-          class="image selected">
+          class="${item.imageClasses} selected">
+          ${item.innerHtml}
         </div>
       `
       offset += 100;
@@ -83,7 +91,6 @@ template.innerHTML = `
     </div>
     <div class="image-container">
       ${getimagesHtml(images)}
-      <div class="image-container__text">This Page is under construction</div>
     </div>
   </div>
   <div class="bottom-bar">

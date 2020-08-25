@@ -5,10 +5,18 @@
     display: flex;
   }
   width: 100%;
+  background-color: #F2FCFE;
 
   .responsive__first-box{
     color: darken($light-color, 5%);
-    background: coral;
+    //background: coral;
+    background-image: url(assets/responsive-2044921_1280.jpg);
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center center;
+    @include desktop {
+      //background-size: cover;
+    }
     text-align: center;
     padding: 10vh;
     @include tablet{
@@ -17,8 +25,9 @@
   }
 
   .responsive__second-box{
-    color: darken($light-color, 5%);
-    background: #45A1FF;
+    color: darken($light-color, 60%);
+    //background: #45A1FF;
+    background: #9FCCE3;
     text-align: center;
     padding: 5vh;
     height: 40vh;

@@ -74,26 +74,71 @@ $bar-color: darken($light-color, 45%);
       height: 100%;
       transition: all 1s;
       position: absolute;
+      //background-size: cover;
+      //background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .contain-image {
+      background-size: contain;
+      background-position: center bottom;
+    }
+
+    .cover-image {
+      background-size: cover;
     }
 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
  
-   .image-container__text {
+   .image-container__text-bottom {
       font-family: 'serif';
       font-weight: bold;
+      //background: coral;
+      padding: 1%;
+      border-radius: 5px;
       font-size: 10vw;
-      position: absolute;
-      z-index: 1;
       @include tablet{
         font-size: 4.5vw;
       }
-      color: white;
-      margin-bottom: 10px;
-    }
-    .image-container__text {
+//      color: white;
+      position: absolute;
+      bottom: 10%;
       margin-left: 3%;
+      margin-right: 3%;
+    }
+
+   .image-container__text-top{
+      font-family: 'serif';
+      font-weight: bold;
+      //background: coral;
+      padding: 1%;
+      border-radius: 5px;
+      font-size: 10vw;
+      @include tablet{
+        font-size: 4.5vw;
+      }
+//      color: white;
+      position: absolute;
+      top: 5%;
+      margin-left: 3%;
+      margin-right: 3%;
+    }
+
+    .center-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10vw;
+      text-align: center;
+      @include tablet{
+        font-size: 4.5vw;
+      }
+
+      div {
+        width: 60%;
+      }
     }
   }
 }

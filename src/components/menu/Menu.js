@@ -14,9 +14,9 @@ const getHtml= (primaryColor, lightColor) => {
           >
           <div
             style="color: ${primaryColor}">
-            <slot name="point-icon"/>
+            <slot name="person-icon"/>
           </div>
-          Find a Store
+          contact me 
         </div>
         <div class="bar__name--left">
           <span>Renato</span><span class="primary-color">Melo</span>

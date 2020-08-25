@@ -69,7 +69,8 @@
       .search-container__search{
         @include desktop{
           padding: 1vh;
-          background: #F2F2F2;
+          //background: #F2F2F2;
+          background: coral;
           border-radius: 50%;
         }
       }
