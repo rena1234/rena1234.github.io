@@ -9,7 +9,8 @@ const getHtml= (primaryColor, lightColor) => {
           <slot name="menu-icon"/>
         </div>
         <div
-          class="menu__left__find hover-text"
+          data-section="footer-section"
+          class="menu__left__find hover-text link-button"
           style="border-color: ${lightColor}"
           >
           <div
@@ -26,18 +27,21 @@ const getHtml= (primaryColor, lightColor) => {
         <span>Renato</span><span style="color: ${primaryColor}">Melo</span>
       </div>
       <div class="menu__right">
-        <div class="menu__right__desktop-icon hover-text">
-          <slot name="person-icon"/>
+        <div 
+          data-section="responsive-section"
+          class="menu__right__desktop-icon hover-text link-button"> 
+          <slot name="aspect-icon"/>
         </div>
-        <div class="menu__right__desktop-icon hover-text"> 
-          <slot name="heart-icon"/>
-        </div>
-        <div id ="testeid" class="hover-text">
+        <div 
+          data-section="experience-section"
+          class="hover-text link-button">
           <slot name="shopping-icon"/>
         </div>
-        <div class="search-container">
+        <div 
+          data-section="stack-section"
+          class="search-container link-button">
           <div class="search-container__search hover-text">
-            <slot name="search-icon"/>
+            <slot name="integration-icon"/>
           </div>
         </div>
       </div>
@@ -60,27 +64,30 @@ export default class Menu extends HTMLElement {
     this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.shadowRoot.appendChild(styleElement);
+    this.initButtons();
   } 
   
-  set primaryColor(color) {
-    this._primaryColor = color;
-    this.updateTemplate();
-    
-  }
-  set lightColor(color) {
-    this._lightColor= color;
-    this.updateTemplate();
-    
-  }
-  set styleHoverElementFactory(styleElementFactory){
-    this._styleHoverElement = styleElementFactory();
-    this.updateTemplate();
+  initButtons() {
+    /*
+    const scrollElements = [
+      document.querySelector('stack-section'),
+      document.querySelector('experience-section'),
+      document.querySelector('github-section'),
+    ];
+    const numberButtons = this.shadowRoot.querySelectorAll('.number');
+    numberButtons.forEach( btn => {
+      btn.addEventListener('click', () => {
+        scrollElements[btn.dataset.index].scrollIntoView({behavior: 'smooth'});
+      });
+    });
+    */
+    const linkButtons = this.shadowRoot.querySelectorAll('.link-button');
+    linkButtons.forEach( btn => {
+      btn.addEventListener('click', () => {
+        const section = document.querySelector(btn.dataset.section);
+        section.scrollIntoView({behavior: 'smooth'});
+      });
+    });
   }
 
-  updateTemplate() {
-    template.innerHTML = getHtml(this._primaryColor, this._lightColor);
-    this.shadowRoot.innerHTML = template.innerHTML;
-    this.shadowRoot.appendChild(styleElement);
-    this.shadowRoot.appendChild(this._styleHoverElement);
-  }
 }
